@@ -1,0 +1,54 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main (){
+    int belanja, total_harga;
+    int batas_diskon = 1102019;
+    string status1, status2, alamat, kk;
+    cout<< "Silahkan Masukkan Alamat Anda : ";
+    cin>>alamat;
+    cout<< "SILAHKAN MASUKKAN STATUS ANDA"<<endl;
+    cout<< "Inputkan 'BM' (Belum Menikah) atau 'M' (Menikah) : ";
+    cin>>status1;
+    cout<< "Inputkan 'Y' (punya anak) atau 'B' (belum punya anak) : ";
+    cin>> status2;
+    cout << "Total belanja anda : ";
+    cin >> belanja;
+    cout<< "Inputkan 'Y' (memiliki Kartu Keluarga) atau 'B' (tidak memiliki Kartu Keluarga) : ";
+    cin>> kk;
+if (alamat == "Makassar")
+{
+    if ((status1 == "M") && (status2 == "Y") && (belanja >= batas_diskon)){
+            cout << "Diskon 75%" << endl;
+            total_harga = belanja - (belanja * 0.75);
+        }else if ((status1 == "M") && (status2 == "B") && (belanja >= batas_diskon) && (kk == "Y")){
+            cout << "Diskon 50%" << endl;
+            total_harga = belanja - (belanja * 0.5);
+        }else if ((status1 == "BM") && (status2 == "B") && (belanja >= batas_diskon) && (kk == "Y")){
+            cout << "Diskon 25% " << endl;
+            total_harga = belanja - (belanja * 0.25);
+        }else if ((status1 == "M") && (status2 == "B") && (belanja >= batas_diskon) && (kk == "T")){
+            cout << "Diskon 10%" << endl;
+            total_harga = belanja - (belanja * 0.10);
+    }
+}
+else{
+    if ((status1 == "M") && (status2 == "Y") && (belanja >= batas_diskon)){
+            cout << "Diskon 75%" << endl;
+            total_harga = belanja - (belanja * (0.75+0.10));
+        }else if ((status1 == "M") && (status2 == "B") && (belanja >= batas_diskon) && (kk == "Y")){
+            cout << "Diskon 50%" << endl;
+            total_harga = belanja - (belanja * (0.5+0.10));
+        }else if ((status1 == "BM") && (status2 == "B") && (belanja >= batas_diskon) && (kk == "Y")){
+            cout << "Diskon 25% " << endl;
+            total_harga = belanja - (belanja * (0.25+0.10));
+        }else if ((status1 == "M") && (status2 == "B") && (belanja >= batas_diskon) && (kk == "T")){
+            cout << "Diskon 10%" << endl;
+            total_harga = belanja - (belanja * (0.10+0.10));
+    }
+}
+    cout <<"Total harga yang dibayar hanya : " << total_harga << endl;
+    return 0;
+ }
