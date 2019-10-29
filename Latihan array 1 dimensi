@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int minyak[5];
+    int hasil=0;
+    for (int i=0; i<5; i++){
+        cout<<"Input liter Ke - "<<i+1<<" : ";
+        cin>>minyak[i];
+    }
+    cout<<endl;
+    for (int i=0; i<5; ++i){
+        hasil += minyak[i];
+        cout<<"Hasil Ke - "<<i<<" adalah : "<<hasil<<endl;
+    }
+    cout<<endl<<"Jumlah seluruh liter yang anda masukkan : "<<hasil<<endl;
+     return 0;
+
+}
